@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
-function Homepage() {
-  const [signedin, setSignedin] = useState(false);
-
+function Homepage(props) {
   return (
     <div className="form_layout">
       <form className="form_interior">
@@ -13,16 +11,17 @@ function Homepage() {
         <br />
         <input type="password" placeholder="Password" className="username" />
         <br /> <br />
-        <button
-          className="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            setSignedin(true);
-          }}
-        >
-          Sign In
-        </button>
-        {console.log(signedin)}
+        {
+          <button
+            className="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              props.onChange(true);
+            }}
+          >
+            Sign In
+          </button>
+        }
       </form>
     </div>
   );
