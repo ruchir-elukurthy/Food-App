@@ -1,27 +1,21 @@
 import React from "react";
-import "./App.css";
+import { Link } from "react-router-dom";
 
-function Homepage(props) {
+function Homepage() {
   return (
     <div className="form_layout">
       <form className="form_interior">
-        <h2 className="head">Login page</h2>
+        <h2 className="login">Login page</h2>
         <br />
         <input type="text" placeholder="Username" className="username" />
         <br />
         <input type="password" placeholder="Password" className="username" />
         <br /> <br />
-        {
-          <button
-            className="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              props.onChange(true);
-            }}
-          >
+        <ul>
+          <Link to="/rooms" className="submit">
             Sign In
-          </button>
-        }
+          </Link>
+        </ul>
       </form>
     </div>
   );
